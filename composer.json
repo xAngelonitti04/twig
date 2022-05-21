@@ -1,0 +1,7 @@
+{
+    "require": {
+        "twig/twig": "^3.0",
+        "composer": "^2.2",
+        "guzzlehttp/guzzle": "^7.4"
+    }
+}

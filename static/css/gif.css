@@ -1,0 +1,219 @@
+/* Container holding the image and the text */
+.container {
+    display:flex;
+    justify-content:center ;
+    align-items: center;
+    flex-direction: column;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .textarea {
+    width: 467px;
+    height: 55px;
+  }
+  
+  h1{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    font-family: 'Inter', sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 44px;
+  }
+  
+ .text{
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    background: white;
+    height: 63px;
+    width: 322px;
+    margin: 14px 0;
+    border: 1px solid #000000;
+    border-radius:14px;
+    font-family: 'Inter', sans-serif;
+    font-size: 25px;
+  }
+  input{
+    text-align: center;
+  }
+
+.submit{
+    background: #FF7E7E;
+    border-radius: 2;
+    border: 0;
+    cursor: pointer;
+    font-size: 25;
+    height: 63px;
+    width: 322px;
+    font-family: 'Inter', sans-serif;
+    border-radius:14px;
+    font-size: 25px;
+  }
+
+  .btn-primary{
+    background: #FF7E7E !important;
+    border:0;
+
+
+  }
+
+
+  .gifComponent{
+    font-family: 'Inter', sans-serif;
+    background-size: cover;
+    width: 322px;
+    height: 212px;
+    background-position:center;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-block-end: 15px;
+  }
+  
+  .gifComponent::after{
+    content:"";
+    position: absolute;
+    top:0;
+    left:0;
+    width: 100%;
+    height: 100%;
+    background:linear-gradient(180deg, #000000 0%, rgba(196, 196, 196, 0) 48.44%, #000000 100%);
+    z-index: 0;
+    
+  }
+
+  .author{
+    font-family: 'Inter', sans-serif;
+    color: #ffffff;
+    font-size: 20px;
+    margin-block-start: 1em;
+    margin: 1em 0px 0px 20px;
+      }
+
+  .username{
+    font-family: 'Inter', sans-serif;
+    color: #ffffff;
+    font-size: 16px;
+    margin: 0px 0px 0px 20px;
+  }
+
+  .date{
+    font-family: 'Inter', sans-serif;
+    color: #ffffff;
+    font-size: 12px;
+    margin: 0px 0px 0px 20px;
+  }
+
+  .icon{
+    font-family: 'Inter', sans-serif;
+    color: #ffffff;
+    font-size: 12px;
+    margin: 0px 0px 15px 20px;
+  }
+
+  .top,.bottom{
+    z-index:1;
+  }
+
+  .pages-button{
+    background: #FF7E7E;
+    border-radius: 1px;
+    height: 2em;
+    width: 2em;
+    border: 0;
+    cursor: pointer;
+    font-size: 20px;
+    font-family: 'Inter', sans-serif;
+    border-radius: 14px;
+    margin: 15px 15px 15px 0px;
+    color:#ffffff;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+  }
+  .pages-button:hover{
+    background: #c15a5a;
+    border-radius: 1px;
+    height: 2em;
+    width: 2em;
+    border: 0;
+    cursor: pointer;
+    font-size: 20px;
+    font-family: 'Inter', sans-serif;
+    border-radius: 14px;
+    margin: 15px 15px 15px 0px;
+    color:#ffffff;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+  }
+  .pages-button-confirm{
+    background: #8c2121;
+    border-radius: 1px;
+    height: 2em;
+    width: 2em;
+    border: 0;
+    cursor: pointer;
+    font-size: 20px;
+    font-family: 'Inter', sans-serif;
+    border-radius: 14px;
+    margin: 15px 15px 15px 0px;
+    color:#ffffff;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+  }
+
+  .rows{
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+  }
+
+
+  /*CSS COPIED*/
+  .tooltip {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .tooltip .tooltiptext {
+    visibility: hidden;
+    width: 140px;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px;
+    position: absolute;
+    z-index: 1;
+    bottom: 150%;
+    left: 50%;
+    margin-left: -75px;
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+  
+  .tooltip .tooltiptext::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #555 transparent transparent transparent;
+  }
+  
+  .tooltip:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  .transparent{
+    border:0;
+    background-color: transparent;
+  }

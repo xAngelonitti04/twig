@@ -1,0 +1,95 @@
+{% extends "base.html.twig" %}
+
+
+{% block content %}
+    <body>
+        <div class="container">
+            <h1>SHARE <br> YOUR GIF</h1>
+            <p>
+                <form method="post">
+                    <input type="text" class="text" name="cerca" placeholder="meme"><br>
+                    <input type="submit" class="submit" name="invio" value="Search on GIPHY">
+                </form>
+            </p>
+            
+            {% for d in dati %}
+            
+            {% block js %}
+                <script>
+
+                    function copyToClipboard(text) {
+                        var sampleTextarea = document.createElement("textarea");
+                        document.body.appendChild(sampleTextarea);
+                        sampleTextarea.value = text; //save main text in it
+                        sampleTextarea.select(); //select textarea contenrs
+                        document.execCommand("copy");
+                        document.body.removeChild(sampleTextarea);
+                        alert("Copied!");
+                    }
+
+                    
+
+                    function myFunction(url){
+                        copyToClipboard(url);
+                    }
+                    var selectedText=document.getElementById("editor").getSelectedText();
+                </script>
+            {% endblock %}
+
+            <div class="gifComponent" style="background-image: url({{ d.url }})">
+                <div class="top">
+                    <h4 class="author">
+                        {{ d.title }}
+                    </h4>    
+                    
+                    <h5 class="username">
+                        uploaded by {% if d.username %} {{ d.username }} {% else %} unknown {% endif %}
+                    </h5>
+        
+                    
+                    <h7 class="date">
+                        on {{ d.date }}
+                    </h7>
+                </div>
+                <div class="bottom">
+                    <a onclick="myFunction('{{d.url}}')"><img src="static/img/icon1.png" class="icon"></a>
+                    <!-- Button trigger modal -->
+                    <button type="button" class="transparent" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                    <img src="static/img/icon2.png" class="icon">
+                    </button>
+
+
+
+                </div>
+
+
+            </div>
+
+                                <!-- Modal -->
+                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Incorporate code</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <input type="textarea" onclick="this.select()" class="textarea" value="<iframe width='{{d.width}}' height='{{d.height}}' src='{{d.url}}' title='{{d.rirle}}' frameborder='0' allowfullscreen></iframe>">
+                        </div> 
+                        </div>
+                    </div>
+                    </div>
+            
+            {% endfor %}
+
+            {% block pages %}
+            <div class="rows">
+            {% for i in 1..10 %}
+                <a href="/contenuto.php?index={{ i }}" class="{% if index == i %}pages-button-confirm{% else %}pages-button{% endif %}">{{i}}</a> 
+            {% endfor %}
+            </div>
+            {% endblock %}
+        </div>
+    </body>
+    
+{% endblock %}
